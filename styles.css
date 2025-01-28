@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(490deg, black, rgba(21, 21, 66, 0.836), rgb(7, 7, 119));
+    background-size: cover; 
+    min-height: 100vh; 
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo principal do container */
+.main-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #0d3f81;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    font-size: 32px;
+    color: #13eff7;
+    margin-bottom: 30px;
+}
+
+/* Estilo das seções de informações */
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Estilo de cada caixa de informação */
+.info-box {
+    background-color: #1a4a7b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover para as caixas de informações */
+.info-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Título das caixas */
+.info-box h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Parágrafos dentro das caixas de informação */
+.info-box p {
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Botão principal para abrir a calculadora */
+#open-popup {
+    background-color: #d60040;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+#open-popup:hover {
+    background-color: #a10031;
+}
+
+/* Popup da calculadora */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo do popup */
+.popup-content {
+    background: #1a4a7b;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    width: 400px;
+}
+
+/* Fechar o popup */
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilo das labels e inputs dentro do popup */
+label {
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input:focus {
+    background-color: #e0e0e0;
+    outline: none;
+}
+
+/* Estilo para o botão dentro do popup */
+button {
+    background-color: #d60040;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a10031;
+}
+
+/* Resultado no popup */
+#resultado-popup {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Estilo dos campos específicos para cada figura */
+.campo {
+    display: none;
+}
+
+/* Estilo da área de seleção */
+select {
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Efeito de transição para as figuras */
+select, .campo {
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar os campos quando selecionado uma figura */
+#campos-popup {
+    display: none;
+    opacity: 0;
+}
+
+/* Estilo de foco no select */
+select:focus {
+    background-color: #e0e0e0;
+    outline: none;
+}
+
+/* Animar a exibição dos campos */
+#campos-popup[style="display: block;"] {
+    opacity: 1;
+}
